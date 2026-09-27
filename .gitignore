@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local environment
+.env
+.env.*
+
+# Large/local data
+data/raw/*
+data/processed/*
+*.parquet
+*.jsonl
+*.sqlite
+*.db
+
+# Model/cache files
+models/
+.cache/
+huggingface/
+ollama/
+
+# Experiment outputs
+experiments/runs/
+experiments/logs/
+
+# Temporary files
+*.tmp
+*.log
