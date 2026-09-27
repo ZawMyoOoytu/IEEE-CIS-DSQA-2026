@@ -1,0 +1,155 @@
+version: "1.0"
+
+corpus:
+  name: "IEEE CIS DSQA 2026 Pre-Challenge Public Corpus"
+  status: "pre-challenge"
+  purpose: >
+    Publicly available domain knowledge for local research and
+    retrieval experiments before the official challenge starter kit
+    and evaluation corpus become available.
+
+  rules:
+    official_evaluation_corpus: false
+    use_only_public_sources: true
+    preserve_source_metadata: true
+    preserve_original_urls: true
+    do_not_claim_as_official_corpus: true
+
+sources:
+
+  # ============================================================
+  # IFMIF-DONES OFFICIAL SOURCES
+  # ============================================================
+
+  - id: "ifmif_dones_main"
+    domain: "IFMIF-DONES"
+    source_type: "official_website"
+    authority: "official"
+    organization: "IFMIF-DONES España"
+    title: "IFMIF-DONES"
+    url: "https://ifmif-dones.es/"
+    language: "en"
+    priority: 1
+    enabled: true
+
+  - id: "ifmif_dones_programme"
+    domain: "IFMIF-DONES"
+    source_type: "official_programme"
+    authority: "official"
+    organization: "IFMIF-DONES España"
+    title: "DONES Programme"
+    url: "https://ifmif-dones.es/es/programa-dones/"
+    language: "es"
+    priority: 1
+    enabled: true
+
+  - id: "ifmif_dones_projects"
+    domain: "IFMIF-DONES"
+    source_type: "official_projects"
+    authority: "official"
+    organization: "IFMIF-DONES España"
+    title: "Projects"
+    url: "https://ifmif-dones.es/dones-programme/projects/"
+    language: "en"
+    priority: 1
+    enabled: true
+
+  - id: "ifmif_dones_updates"
+    domain: "IFMIF-DONES"
+    source_type: "official_news"
+    authority: "official"
+    organization: "IFMIF-DONES España"
+    title: "IFMIF-DONES Project Updates"
+    url: "https://ifmif-dones.es/dones-updates/"
+    language: "en"
+    priority: 2
+    enabled: true
+
+  - id: "ifmif_dones_tenders"
+    domain: "IFMIF-DONES"
+    source_type: "official_tenders"
+    authority: "official"
+    organization: "IFMIF-DONES España"
+    title: "Tenders and Technical Procurement Information"
+    url: "https://ifmif-dones.es/vacancy-category/tenders/"
+    language: "en"
+    priority: 2
+    enabled: true
+
+  # ============================================================
+  # AI RESEARCH LITERATURE
+  # ============================================================
+
+  - id: "arxiv"
+    domain: "AI research literature"
+    source_type: "research_repository"
+    authority: "public"
+    organization: "arXiv"
+    title: "arXiv"
+    url: "https://arxiv.org/"
+    language: "en"
+    priority: 2
+    enabled: true
+
+  - id: "acl_anthology"
+    domain: "AI research literature"
+    source_type: "research_repository"
+    authority: "public"
+    organization: "ACL Anthology"
+    title: "ACL Anthology"
+    url: "https://aclanthology.org/"
+    language: "en"
+    priority: 2
+    enabled: true
+
+  - id: "papers_with_code"
+    domain: "AI research literature"
+    source_type: "research_repository"
+    authority: "public"
+    organization: "Papers with Code"
+    title: "Papers with Code"
+    url: "https://paperswithcode.com/"
+    language: "en"
+    priority: 3
+    enabled: true
+
+collection_policy:
+
+  document_types:
+    - "html"
+    - "pdf"
+    - "technical_report"
+    - "research_paper"
+
+  preferred_sources:
+    - "official_website"
+    - "official_programme"
+    - "official_projects"
+    - "official_technical_document"
+    - "peer_reviewed_paper"
+    - "research_repository"
+
+  excluded:
+    - "paywalled_unknown_copy"
+    - "unverified_blog"
+    - "social_media_only"
+    - "duplicate_mirror"
+
+metadata:
+  required:
+    - "source_id"
+    - "domain"
+    - "title"
+    - "url"
+    - "source_type"
+    - "authority"
+    - "retrieved_at"
+
+  optional:
+    - "publication_date"
+    - "document_date"
+    - "language"
+    - "authors"
+    - "organization"
+    - "license"
+    - "content_hash"
